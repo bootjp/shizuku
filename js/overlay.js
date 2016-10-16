@@ -1,3 +1,4 @@
+/* shizuku v0.0.0 | (c) bootjp | https://github.com/bootjp/shizuku/blob/master/LICENSE */
 (function() {
   if (typeof window.__shizuku__ === 'undefined') {
     return;
@@ -21,7 +22,8 @@
   var overlay = function() {
     clearTimeout(timer);
     setStyle(container, {
-      display: 'none'
+      display: 'none',
+      opacity: 0
     });
     timer = setTimeout(function() {
       var scrollWidth = (document.documentElement.scrollWidth || document.body.scrollWidth);
