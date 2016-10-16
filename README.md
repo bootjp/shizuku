@@ -1,0 +1,2 @@
+# shizuku
+javascript ad script
