@@ -8,13 +8,15 @@ Please use from a release that is not the master branch.
 ## How to carry out the smartphones overlay
 
 ```html
+<!-- define overlay target element -->
 <img src="asset/320x50.png" id="ol">
+<!-- load shizuku js -->
+<script src="../js/shizuku_core.js"></script>
 <script>
-// To define the element information to be overlay displayed in the shizuku
-__shizuku__ = {containerId: 'ol', width: 320, height:50};
+  // shizuku calld
+  __shizuku__.Init({smartPhoneOverlay: {targetElementId: 'ol', width: 320, height:50}});
+  __shizuku__.SmartPhoneOverlay();
 </script>
-<!-- shizukuの定義後に描画ロジックを呼び出す -->
-<script src="../js/overlay.js"></script>
 ```
 
 See the sample / overlay.html details
