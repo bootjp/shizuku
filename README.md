@@ -5,6 +5,13 @@ javascript ad script
 Specification changes under development might take place.
 Please use from a release that is not the master branch.
 
+## sample page
+
+### overlay sample page
+
+* https://bootjp.github.io/shizuku/sample/overlay.html
+
+
 ## How to carry out the smartphones overlay
 
 ```html
