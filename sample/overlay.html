@@ -5,66 +5,93 @@
   <title>shizuku overlay samples</title>
 </head>
 <body>
-  <img src="asset/320x50.png" id="ol">
-  <script>
-    // shizukuにオーバレイ表示させる要素情報を定義する
-    __shizuku__ = {containerId: 'ol', width: 320, height:50};
-  </script>
-  <!-- shizukuの定義後に描画ロジックを呼び出す -->
-  <script src="../js/overlay.js"></script>
-  <!-- 以下表示確認のためのHTMLで直接的な動作には関係ありません -->
-  <div style="text-align: center">
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-    <p>↓</p>
-  </div>
+<img src="asset/320x50.png" id="ol">
+<script src="../js/shizuku_core.js"></script>
+<script>
+  __shizuku__.Init({smartPhoneOverlay: {targetElementId: 'ol', width: 320, height:50}});
+  __shizuku__.SmartPhoneOverlay();
+</script>
+<div style="text-align: center">
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+  <p>↓</p>
+</div>
 </body>
 </html>
