@@ -77,6 +77,7 @@ var __shizuku__ = (function() {
       }, 300);
 
       if (!__shizuku__.Property.smartPhoneOverlay.registerEvent) {
+        __shizuku__.Property.smartPhoneOverlay.registerEvent = true;
         __shizuku__.EventRegister([
           'DOMContentLoaded',
           'scroll',
