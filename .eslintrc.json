@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "eslint:recommended"
+  ],
+  "plugins": [],
+  "parserOptions": {},
+  "env": {
+    "browser": true
+  },
+  "globals": {},
+  "rules": {
+    "semi": "error",
+    "quotes": [2, "single"]
+  }
+}
