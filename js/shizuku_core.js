@@ -5,8 +5,8 @@ var __shizuku__ = (function() {
   }
 
   var __shizuku__ = {
-    Property: {
-      smartPhoneOverlay: {
+    property: {
+      smartphoneOverlay: {
         targetElementId: null,
         width: 0,
         height: 0,
@@ -17,36 +17,36 @@ var __shizuku__ = (function() {
       initCalled: false
     },
 
-    Init: (function(config) {
+    init: (function(config) {
       if (typeof config !== 'undefined') {
         for (var property in config) {
-          __shizuku__.Property[property] = config[property];
+          __shizuku__.property[property] = config[property];
         }
-        this.Property.initCalled = true;
+        this.property.initCalled = true;
       }
     }),
 
-    SmartPhoneOverlay: (function() {
-      if (!__shizuku__.Property.initCalled) {
+    smartphoneOverlay: (function() {
+      if (!__shizuku__.property.initCalled) {
         return;
       }
-      var container = document.getElementById(__shizuku__.Property.smartPhoneOverlay.targetElementId);
+      var container = document.getElementById(__shizuku__.property.smartphoneOverlay.targetElementId);
 
-      clearTimeout(__shizuku__.Property.smartPhoneOverlay.timer);
-      __shizuku__.SetStyle(container, {
+      clearTimeout(__shizuku__.property.smartphoneOverlay.timer);
+      __shizuku__.setStyle(container, {
         display: 'none',
         opacity: 0
       });
 
-      __shizuku__.Property.smartPhoneOverlay.timer = setTimeout(function() {
+      __shizuku__.property.smartphoneOverlay.timer = setTimeout(function() {
         var scrollWidth = (document.documentElement.scrollWidth || document.body.scrollWidth);
         var windowShort = Math.min(window.innerWidth, window.innerHeight);
         var windowMargin = (window.innerWidth / scrollWidth);
         var expandWidth = Math.min(scrollWidth * windowMargin, windowShort);
-        var zoomScale = (expandWidth / __shizuku__.Property.smartPhoneOverlay.width);
+        var zoomScale = (expandWidth / __shizuku__.property.smartphoneOverlay.width);
         var transform = 'scale(' + zoomScale + ', ' + zoomScale + ')';
         var transformOrigin = '0 0';
-        __shizuku__.SetStyle(container, {
+        __shizuku__.setStyle(container, {
           display: 'block',
           position: 'absolute',
           transform: transform,
@@ -58,42 +58,42 @@ var __shizuku__ = (function() {
           zIndex: 0x7FFFFFFF
         });
         var containerRect = container.getBoundingClientRect();
-        __shizuku__.SetStyle(container, {
+        __shizuku__.setStyle(container, {
           left: ((window.innerWidth / 2) - (containerRect.width / 2) + window.scrollX) + 'px',
           top: (window.scrollY + window.innerHeight - containerRect.height) + 'px'
         });
         var opacity = 0;
-        clearInterval(__shizuku__.Property.smartPhoneOverlay.animationTimer);
-        __shizuku__.Property.smartPhoneOverlay.animationTimer = setInterval(function() {
-          __shizuku__.SetStyle(container, {
+        clearInterval(__shizuku__.property.smartphoneOverlay.animationTimer);
+        __shizuku__.property.smartphoneOverlay.animationTimer = setInterval(function() {
+          __shizuku__.setStyle(container, {
             opacity: ((++opacity) / 100),
             filter: 'alpha(opacity=' + opacity + ')'
           });
 
           if (opacity === 100) {
-            clearInterval(__shizuku__.Property.smartPhoneOverlay.animationTimer);
+            clearInterval(__shizuku__.property.smartphoneOverlay.animationTimer);
           }
         }, 10);
       }, 300);
 
-      if (!__shizuku__.Property.smartPhoneOverlay.registerEvent) {
-        __shizuku__.Property.smartPhoneOverlay.registerEvent = true;
-        __shizuku__.EventRegister([
+      if (!__shizuku__.property.smartphoneOverlay.registerEvent) {
+        __shizuku__.property.smartphoneOverlay.registerEvent = true;
+        __shizuku__.eventRegister([
           'DOMContentLoaded',
           'scroll',
           'touchmove',
           'resize'
-        ], this.SmartPhoneOverlay);
+        ], this.smartphoneOverlay);
       }
     }),
 
-    EventRegister: (function(events, target) {
+    eventRegister: (function(events, target) {
       for (var event in events) {
         window.addEventListener(events[event], target);
       }
     }),
 
-    SetStyle: (function(element, style) {
+    setStyle: (function(element, style) {
       for (var property in style) {
         element.style[property] = style[property];
       }
