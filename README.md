@@ -21,8 +21,8 @@ Please use from a release that is not the master branch.
 <script src="../js/shizuku_core.js"></script>
 <script>
   // shizuku calld
-  __shizuku__.Init({smartPhoneOverlay: {targetElementId: 'ol', width: 320, height:50}});
-  __shizuku__.SmartPhoneOverlay();
+  __shizuku__.init({smartphoneOverlay: {targetElementId: 'ol', width: 320, height:50}});
+  __shizuku__.smartphoneOverlay();
 </script>
 ```
 
