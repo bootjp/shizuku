@@ -96,7 +96,7 @@ var __shizuku__ = (function() {
       for (var property in style) {
         element.style[property] = style[property];
       }
-    }),
+    })
   };
 
   return __shizuku__;
