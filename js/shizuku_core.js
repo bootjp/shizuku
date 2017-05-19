@@ -9,6 +9,7 @@ var Shizuku = (function() {
       return new Shizuku(config);
     }
 
+    // config default value.
     this.config = {
       smartphoneOverlay: {
         targetElementId: null,
@@ -19,10 +20,6 @@ var Shizuku = (function() {
         registerEvent: false
       }
     };
-
-    if (!(this instanceof Shizuku)) {
-      return new Shizuku(config);
-    }
 
     if (typeof config !== 'undefined') {
       for (var property in config) {
@@ -43,10 +40,13 @@ var Shizuku = (function() {
     }
   };
 
-  Shizuku.prototype.smartphoneOverlayEffect= function() {
+  Shizuku.prototype.smartphoneOverlayEffect = function() {
     var container = document.getElementById(_shizuku.config.smartphoneOverlay.targetElementId);
 
+    // clear last dom change event and animation
     clearTimeout(_shizuku.config.smartphoneOverlay.timer);
+    clearInterval(_shizuku.config.smartphoneOverlay.animationTimer);
+
     _shizuku.setStyle(container, {
       display: 'none',
       opacity: 0
@@ -79,7 +79,6 @@ var Shizuku = (function() {
 
       var opacity = 0;
       // last animation event clear.
-      clearInterval(_shizuku.config.smartphoneOverlay.animationTimer);
       _shizuku.config.smartphoneOverlay.animationTimer = setInterval(function() {
         _shizuku.setStyle(container, {
           opacity: ((++opacity) / 100),
