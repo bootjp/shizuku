@@ -36,7 +36,7 @@ var Shizuku = (function() {
 
   Shizuku.prototype.eventRegister = function(events, target) {
     for (var event in events) {
-      window.addEventListener(events[event], target);
+      window.addEventListener(events[event], target, false);
     }
   };
 
